@@ -35,11 +35,6 @@ try:
 except:
     os.mkdir(baseDir)       
 
-
-attributes='q{}_N{}_G{}_sl{}_sq{}.txt'
-
-
-
 for N in Ns:
     for numSim in range(0,numSims):
         population=Population(N)
