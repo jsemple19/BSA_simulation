@@ -9,16 +9,10 @@ random.seed(mySeed)
 
 loci=15000
 mutRate=3.1e-09
-#chrRegions=np.array([0, 0.5, 4.5, 12.5, 16.5, 17]*loci/17,dtype=float)
-#regRecRates=np.array([0, 7, 1, 7, 0]/15, dtype=float)
 
 qtls1=np.array([0.2*loci],dtype=int)
 qtls2=np.array([0.5*loci],dtype=int)
 qtls3=np.array([0.15*loci, 0.5*loci],dtype=int)
-#qtls4=np.array([0.05*loci, 0.2*loci],dtype=int)
-#qtls5=np.array([0.35*loci, 0.5*loci],dtype=int)
-#qtls6=np.array([0.2*loci, 0.35*loci],dtype=int)
-
 
 #create vector of recombination rate along chr specific for C. elegans
 recRate=celegRR(loci)
@@ -26,12 +20,6 @@ RR=recRate.perLocusRecRates()
 
 # create genome template
 genome3=haploidGenome(numLoci=loci, mutRate=mutRate, recProb=RR, useRLE=False)
-
-#founder1=founderGenome(genome3)
-#founder2=founderGenome(genome3)
-
-#founder1.createFounder(genotype=0)
-#founder2.createFounder(genotype=1)
 
 numSim=10#sys.argv[1]
 Ns=[100,500,1000,5000,10000,50000,100000]
